@@ -71,3 +71,6 @@ Support HelloUI by [saying hello](https://twitter.com/ohansemmanuel?lang=en) :)
 ### License
 
 Licensed under the MIT License by [Ohans Emmanuel](https://www.ohansemmanuel.com/)
+
+### Change Logs
+- Add change logs section
