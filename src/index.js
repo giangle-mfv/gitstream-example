@@ -11,6 +11,7 @@ document.querySelectorAll("button").forEach((buttonEl) => {
     allButtonsEl.forEach((btn) => btn.classList.remove("selected"));
 
     // add selected class to clicked button
+    // remove selected class
     // activeButtonEl.classList.add("selected");
   });
 });
