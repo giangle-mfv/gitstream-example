@@ -48,6 +48,28 @@ automations:
           label: 🚨 {{ pr.unresolved_threads }} Unresolved Thread(s)
           color: {{ colors.yellow }} 
 
+  safe_changes:
+    # Triggered for any changes that only affect formatting, documentation, tests, or images
+    if:
+      - {{ is.formatting or is.docs or is.tests or is.image }}
+    # Apply a safe change label, approve the PR and explain why in a comment.
+    run: 
+      - action: add-label@v1
+        args:
+          label: 'safe-change'
+      - action: approve@v1
+      - action: add-comment@v1
+        args:
+          comment: |
+            This PR is considered a safe change and has been automatically approved.
+
+# These custom expressions are used in the safe_changes automation
+is:
+  formatting: {{ source.diff.files | isFormattingChange }}
+  docs: {{ files | allDocs }}
+  tests: {{ files | allTests }}
+  image: {{ files | allImages }}
+
 # +----------------------------------------------------------------------------+
 # | Custom Expressions                                                         |
 # | https://docs.gitstream.cm/how-it-works/#custom-expressions                 |
