@@ -37,7 +37,16 @@ automations:
       - action: explain-code-experts@v1 
         args:
           gt: 10 
-
+  
+  label_unresolved_threads:  
+    if:
+      - {{ pr.status == 'open' }}  
+      - {{ pr.unresolved_threads }}
+    run:
+      - action: add-label@v1
+        args:
+          label: 🚨 {{ pr.unresolved_threads }} Unresolved Thread(s)
+          color: {{ colors.yellow }} 
 
 # +----------------------------------------------------------------------------+
 # | Custom Expressions                                                         |
