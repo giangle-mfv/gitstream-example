@@ -10,7 +10,7 @@ document.querySelectorAll("button").forEach((buttonEl) => {
     const allButtonsEl = document.querySelectorAll(".btn");
     allButtonsEl.forEach((btn) => btn.classList.remove("selected"));
 
-    // add selected class to clicked button
-    // activeButtonEl.classList.add("selected");
+    activeButtonEl.classList.add("selected");
+    activeButtonEl.classList.add("disabled");
   });
 });
