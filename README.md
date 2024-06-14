@@ -74,3 +74,4 @@ Licensed under the MIT License by [Ohans Emmanuel](https://www.ohansemmanuel.com
 
 ### Change Logs
 - Add change logs section
+- Add safe_change automation rules
